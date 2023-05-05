@@ -5,7 +5,7 @@ db.keywords.aggregate([
     {
         $match: {
             $or: [{keywords: { $elemMatch: { name: "mickey mouse" } }},
-                  { keywords: { $elemMatch: { name: "marvel comic" } }
+                  {keywords: { $elemMatch: { name: "marvel comic" } }
             }]
         }
 //        $or{ keywords: { $elemMatch: { name: "marvel comic" } }

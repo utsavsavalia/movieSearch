@@ -1,6 +1,7 @@
 // Task 1iii
+//siddharth fixed it, the problem was that its ratings, not rating.
 
-db.rating.aggregate([
+db.ratings.aggregate([
     // TODO: Write your query here
     {
         $group:
@@ -14,7 +15,18 @@ db.rating.aggregate([
         {
             _id: 0,
             rating: "$_id",
+            timestamp: 1,
+            movie_rating: 1,
             count: 1
+        }
+    },
+    {
+        $sort: {
+            // movieId: 1,
+            // vote_average: -1,
+            // vote_count: -1,
+            // movieId: 1
+            rating: -1
         }
     }
 ]);
